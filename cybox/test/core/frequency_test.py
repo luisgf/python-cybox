@@ -12,7 +12,7 @@ class TestFrequency(EntityTestCase, unittest.TestCase):
 
     _full_dict = {
         'rate': 1.2,
-        'units': u"per hour",
+        'units': "per hour",
         'scale': "weekly",
         'trend': "Increasing",
     }

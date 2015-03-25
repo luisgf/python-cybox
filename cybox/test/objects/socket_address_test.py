@@ -18,17 +18,17 @@ class TestSocketAddress(ObjectTestCase, unittest.TestCase):
         # but we don't enforce that, so we can test both here.
         'ip_address': {
             'category': Address.CAT_IPV4,
-            'address_value': u"192.168.1.1",
+            'address_value': "192.168.1.1",
             'xsi:type': "AddressObjectType"
         },
         'hostname': {
             'is_domain_name': True,
-            'hostname_value': u"www.example.com",
+            'hostname_value': "www.example.com",
             'xsi:type': "HostnameObjectType"
         },
         'port': {
             'port_value': 80,
-            'layer4_protocol': u"TCP",
+            'layer4_protocol': "TCP",
             'xsi:type': "PortObjectType"
         },
         'xsi:type': object_type,

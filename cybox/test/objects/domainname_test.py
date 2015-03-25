@@ -12,7 +12,7 @@ class TestDomainName(ObjectTestCase, unittest.TestCase):
     klass = DomainName
 
     _full_dict = {
-        'type': u"FQDN",
+        'type': "FQDN",
         'value': "www.example.com",
         'xsi:type': object_type,
     }

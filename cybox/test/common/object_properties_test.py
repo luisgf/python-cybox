@@ -15,7 +15,7 @@ class TestProperty(EntityTestCase, unittest.TestCase):
         'id': "example:Property-1",
         'name': "FilePurpose",
         'description': "The purpose of the file",
-        'value': u"Certificate",
+        'value': "Certificate",
     }
 
 

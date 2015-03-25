@@ -81,13 +81,13 @@ def perform_replacement(entity, mapping_list):
     # Attempt the replacement
     for mapping_dict in mapping_list:
         # Do the direct replacement, if applicable
-        if 'search_string' in mapping_dict.keys():
+        if 'search_string' in list(mapping_dict.keys()):
             search_string = mapping_dict['search_string']
             replacement = mapping_dict['replacement']
             if search_string in entity_value:
                 entity.value = entity_value.replace(search_string, replacement)
         # Do the regex replacement, if applicable
-        if 'regex' in mapping_dict.keys():
+        if 'regex' in list(mapping_dict.keys()):
             compiled_regex = mapping_dict['regex']
             replacement = mapping_dict['replacement']
             if compiled_regex.search(entity_value):

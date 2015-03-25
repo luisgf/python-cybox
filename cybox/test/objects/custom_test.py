@@ -12,7 +12,7 @@ class TestCustom(ObjectTestCase, unittest.TestCase):
     klass = Custom
 
     _full_dict = {
-        'custom_name': u"SuperCustomizedObjectName",
+        'custom_name': "SuperCustomizedObjectName",
         'description': "Some description of the custom object",
         'custom_properties': [
             {'name': "Property #1", 'description': "A First Property", 'value': "12345"},

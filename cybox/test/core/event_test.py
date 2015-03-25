@@ -13,8 +13,8 @@ class TestEvent(EntityTestCase, unittest.TestCase):
     _full_dict = {
         'id': "example:Event-1",
         'idref': "example:Event-2",
-        'type': u"Port Scan",
-        'description': u"This is a test event",
+        'type': "Port Scan",
+        'description': "This is a test event",
         'observation_method': {'class': "Network"},
         'frequency': {'rate': 1.0},
         'actions': [

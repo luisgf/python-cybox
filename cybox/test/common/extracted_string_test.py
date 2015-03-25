@@ -6,19 +6,19 @@ import unittest
 from cybox.common import ExtractedString, Hash
 from cybox.test import EntityTestCase
 
-STRING = u"This is a string"
+STRING = "This is a string"
 
 class TestExtractedString(EntityTestCase, unittest.TestCase):
     klass = ExtractedString
 
     _full_dict = {
-        'encoding': u"UTF-8",
+        'encoding': "UTF-8",
         'string_value': STRING,
-        'byte_string_value': unicode(STRING.encode('hex')),
+        'byte_string_value': str(STRING.encode('hex')),
         'hashes': [{'type': Hash.TYPE_MD5}],
-        'address': u"1a2b",
+        'address': "1a2b",
         'length': len(STRING),
-        'language': u"English",
+        'language': "English",
         'english_translation': STRING,
     }
 

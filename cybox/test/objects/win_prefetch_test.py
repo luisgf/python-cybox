@@ -14,8 +14,8 @@ class TestWinPrefetch(ObjectTestCase, unittest.TestCase):
     klass = WinPrefetch
 
     _full_dict = {
-        'application_file_name': u"A file name",
-        'prefetch_hash': u"A hash",
+        'application_file_name': "A file name",
+        'prefetch_hash': "A hash",
         'times_executed': 14,
         #'first_run' = cybox.TypedField("First_Run", DateTime)
         #'last_run' = cybox.TypedField("Last_Run", DateTime)

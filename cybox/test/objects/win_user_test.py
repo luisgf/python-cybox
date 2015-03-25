@@ -14,21 +14,21 @@ class TestWinUser(ObjectTestCase, unittest.TestCase):
     _full_dict = {
         # Account-specific fields
         'disabled': False,
-        'domain': u'ADMIN',
+        'domain': 'ADMIN',
         # UserAccount-specific fields
         'password_required': True,
-        'full_name': u"Steve Ballmer",
-        'group_list': [{'name': u"LocalAdministrators"}],
-        'home_directory': u"C:\\Users\\ballmer\\",
+        'full_name': "Steve Ballmer",
+        'group_list': [{'name': "LocalAdministrators"}],
+        'home_directory': "C:\\Users\\ballmer\\",
         'last_login': "2011-05-12T07:14:01+07:00",
         'privilege_list': [
-                {'user_right': u"SeDebugPrivilege"}
+                {'user_right': "SeDebugPrivilege"}
             ],
-        'username': u"ballmer",
-        'user_password_age': u"P180D",
+        'username': "ballmer",
+        'user_password_age': "P180D",
         # WinUser-specific fields
-        'security_id': u"S-1-5-21-3623811015-3361044348-30300820-1013",
-        'security_type': u"SidTypeUser",
+        'security_id': "S-1-5-21-3623811015-3361044348-30300820-1013",
+        'security_type': "SidTypeUser",
         'xsi:type': object_type,
     }
 

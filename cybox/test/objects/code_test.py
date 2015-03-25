@@ -13,12 +13,12 @@ class TestCode(ObjectTestCase, unittest.TestCase):
 
     _full_dict = {
         #TODO: add other fields
-        'description': u"Some code",
-        'type': u"Foo",
-        'purpose': u"Demonstration",
-        'code_language': u"C++",
-        'start_address': u"00040000",
-        'code_segment': u"int a = 1",
+        'description': "Some code",
+        'type': "Foo",
+        'purpose': "Demonstration",
+        'code_language': "C++",
+        'start_address': "00040000",
+        'code_segment': "int a = 1",
         'code_segment_xor': {
             'value': "1234",
             'condition': "Equals",

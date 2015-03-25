@@ -47,7 +47,7 @@ class BaseProperty(PatternFieldGroup, cybox.Entity):
         return self.__unicode__().encode("utf-8")
 
     def __unicode__(self):
-        return unicode(self.serialized_value)
+        return str(self.serialized_value)
 
     def __int__(self):
         return int(self.serialized_value)
@@ -63,7 +63,7 @@ class BaseProperty(PatternFieldGroup, cybox.Entity):
         # static methods, or on an instance of the class after it has been
         # created.
         if isinstance(value_, list):
-            self._value = map(self._parse_value, value_)
+            self._value = list(map(self._parse_value, value_))
         else:
             self._value = self._parse_value(value_)
 
@@ -104,7 +104,7 @@ class BaseProperty(PatternFieldGroup, cybox.Entity):
     @property
     def serialized_value(self):
         if isinstance(self.value, list):
-            return map(self._serialize_value, self.value)
+            return list(map(self._serialize_value, self.value))
         else:
             return self.__class__._serialize_value(self.value)
 
@@ -180,10 +180,8 @@ class BaseProperty(PatternFieldGroup, cybox.Entity):
             PatternFieldGroup.is_plain(self)
         )
 
-    def __nonzero__(self):
+    def __bool__(self):
         return (not self.is_plain()) or (self.value is not None)
-
-    __bool__ = __nonzero__
 
     def to_obj(self, return_obj=None, ns_info=None):
         self._collect_ns_info(ns_info)
@@ -345,7 +343,7 @@ class String(BaseProperty):
 
     @staticmethod
     def _parse_value(value):
-        if value is not None and not isinstance(value, basestring):
+        if value is not None and not isinstance(value, str):
             raise ValueError("Cannot set String type to non-string value")
 
         return value
@@ -358,7 +356,7 @@ class _IntegerBase(BaseProperty):
     def _parse_value(value):
         if value is None or value == '':
             return None
-        if isinstance(value, basestring):
+        if isinstance(value, str):
             return int(value, 0)
         else:
             return int(value)
@@ -510,10 +508,10 @@ class _LongBase(BaseProperty):
     def _parse_value(value):
         if value is None or value == '':
             return None
-        if isinstance(value, basestring):
-            return long(value, 0)
+        if isinstance(value, str):
+            return int(value, 0)
         else:
-            return long(value)
+            return int(value)
 
 
 class Long(_LongBase):

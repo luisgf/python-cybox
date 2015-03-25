@@ -12,10 +12,10 @@ class TestSocketOptions(EntityTestCase, unittest.TestCase):
     klass = SocketOptions
 
     _full_dict = {
-        'ip_multicast_if': u"eth1",  # Should probably be a boolean
-        'ip_multicast_if2': u"wlan0",  # Should probably be a boolean
+        'ip_multicast_if': "eth1",  # Should probably be a boolean
+        'ip_multicast_if2': "wlan0",  # Should probably be a boolean
         'ip_multicast_loop': False,
-        'ip_tos': u"true",  # Should probably be a boolean
+        'ip_tos': "true",  # Should probably be a boolean
         'so_broadcast': False,
         'so_conditional_accept': True,
         'so_keepalive': False,
@@ -43,20 +43,20 @@ class TestNetworkSocket(ObjectTestCase, unittest.TestCase):
     _full_dict = {
         'is_blocking': False,
         'is_listening': True,
-        'address_family': u"AF_INET",
-        'domain': u"PF_INET",
+        'address_family': "AF_INET",
+        'domain': "PF_INET",
         'local_address': {
             'ip_address': {
-                'address_value': u"192.168.1.4",
+                'address_value': "192.168.1.4",
                 'xsi:type': "AddressObjectType",
             },
             'xsi:type': "SocketAddressObjectType",
         },
         'options': {'so_broadcast': False},
-        'protocol': u"IPPROTO_TCP",
+        'protocol': "IPPROTO_TCP",
         'remote_address': {
             'ip_address': {
-                'address_value': u"192.168.100.55",
+                'address_value': "192.168.100.55",
                 'xsi:type': "AddressObjectType",
             },
             'port': {
@@ -65,7 +65,7 @@ class TestNetworkSocket(ObjectTestCase, unittest.TestCase):
             },
             'xsi:type': "SocketAddressObjectType",
         },
-        'type': u"SOCK_STREAM",
+        'type': "SOCK_STREAM",
         'socket_descriptor': 567,
         'xsi:type': object_type,
     }

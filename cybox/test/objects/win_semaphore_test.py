@@ -14,18 +14,18 @@ class TestWinSemaphore(ObjectTestCase, unittest.TestCase):
     _full_dict = {
         'handle': {
             'id': 1234,
-            'name': u"MyHandle",
-            'type': u"Window",
-            'object_address': 0xdeadbeefL,
-            'access_mask': 0x70000000L,
-            'pointer_count': 3L,
+            'name': "MyHandle",
+            'type': "Window",
+            'object_address': 0xdeadbeef,
+            'access_mask': 0x70000000,
+            'pointer_count': 3,
             'xsi:type': "WindowsHandleObjectType",
         },
-        'security_attributes': u"Attributes go here",
+        'security_attributes': "Attributes go here",
         'named': False,
         'current_count': 100,
         'maximum_count': 250,
-        'name': u"A Test",
+        'name': "A Test",
         'xsi:type': object_type
     }
 

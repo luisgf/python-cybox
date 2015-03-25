@@ -84,7 +84,7 @@ class GeneratedsSuper(object):
         for value in values:
             try:
                 fvalue = float(value)
-            except (TypeError, ValueError), exp:
+            except (TypeError, ValueError) as exp:
                 raise_parse_error(node, 'Requires sequence of integers')
         return input_data
 
@@ -102,7 +102,7 @@ class GeneratedsSuper(object):
         for value in values:
             try:
                 fvalue = float(value)
-            except (TypeError, ValueError), exp:
+            except (TypeError, ValueError) as exp:
                 raise_parse_error(node, 'Requires sequence of floats')
         return input_data
 
@@ -120,7 +120,7 @@ class GeneratedsSuper(object):
         for value in values:
             try:
                 fvalue = float(value)
-            except (TypeError, ValueError), exp:
+            except (TypeError, ValueError) as exp:
                 raise_parse_error(node, 'Requires sequence of doubles')
         return input_data
 
@@ -146,7 +146,7 @@ class GeneratedsSuper(object):
         return input_data
 
     def gds_format_datetime(self, input_data, input_name=''):
-        if isinstance(input_data, basestring):
+        if isinstance(input_data, str):
             return input_data
         if input_data.microsecond == 0:
             _svalue = input_data.strftime('%Y-%m-%dT%H:%M:%S')
@@ -193,7 +193,7 @@ class GeneratedsSuper(object):
         return input_data
 
     def gds_format_date(self, input_data, input_name=''):
-        if isinstance(input_data, basestring):
+        if isinstance(input_data, str):
             return input_data
         _svalue = input_data.strftime('%Y-%m-%d')
         if input_data.tzinfo is not None:
@@ -271,12 +271,12 @@ def showIndent(lwrite, level, pretty_print=True):
 
 def quote_xml(text):
     if text is None:
-        return u''
+        return ''
 
     # Convert `text` to unicode string. This is mainly a catch-all for non
     # string/unicode types like bool and int.
     try:
-        text = unicode(text)
+        text = str(text)
     except UnicodeDecodeError:
         text = text.decode(ExternalEncoding)
 
@@ -291,12 +291,12 @@ def quote_xml(text):
 
 def quote_attrib(text):
     if text is None:
-        return u'""'
+        return '""'
 
     # Convert `text` to unicode string. This is mainly a catch-all for non
     # string/unicode types like bool and int.
     try:
-        text = unicode(text)
+        text = str(text)
     except UnicodeDecodeError:
         text = text.decode(ExternalEncoding)
 

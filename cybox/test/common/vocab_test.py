@@ -44,11 +44,11 @@ class TestVocabString(unittest.TestCase):
 
     # https://github.com/CybOXProject/python-cybox/issues/158
     def test_xsi_type_unicode(self):
-        string = u"test\u2010value"
+        string = "test\u2010value"
         vocab_dict = {
                         'value': string,
-                        'condition': u"Equals",
-                        'xsi:type': u"some_xsi_type",
+                        'condition': "Equals",
+                        'xsi:type': "some_xsi_type",
                      }
 
         vocab_dict2 = cybox.test.round_trip_dict(VocabString, vocab_dict)

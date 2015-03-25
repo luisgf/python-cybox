@@ -42,15 +42,15 @@ class Hash(cybox.Entity):
                                          callback_hook=_auto_type)
     fuzzy_hash_value = cybox.TypedField("Fuzzy_Hash_Value", String)
 
-    TYPE_MD5 = u"MD5"
-    TYPE_MD6 = u"MD6"
-    TYPE_SHA1 = u"SHA1"
-    TYPE_SHA224 = u"SHA224"
-    TYPE_SHA256 = u"SHA256"
-    TYPE_SHA384 = u"SHA384"
-    TYPE_SHA512 = u"SHA512"
-    TYPE_SSDEEP = u"SSDEEP"
-    TYPE_OTHER = u"Other"
+    TYPE_MD5 = "MD5"
+    TYPE_MD6 = "MD6"
+    TYPE_SHA1 = "SHA1"
+    TYPE_SHA224 = "SHA224"
+    TYPE_SHA256 = "SHA256"
+    TYPE_SHA384 = "SHA384"
+    TYPE_SHA512 = "SHA512"
+    TYPE_SSDEEP = "SSDEEP"
+    TYPE_OTHER = "Other"
 
     def __init__(self, hash_value=None, type_=None, exact=False):
         """Create a new Hash Object
@@ -131,7 +131,7 @@ class HashList(cybox.EntityList):
 
     def _fix_value(self, value):
         # If the user tries to put a string into a list, convert it to a Hash.
-        if isinstance(value, basestring):
+        if isinstance(value, str):
             return Hash(value)
 
     @property

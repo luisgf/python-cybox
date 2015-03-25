@@ -36,12 +36,12 @@ def normalize_to_xml(value, delimiter):
         raise ValueError("delimiter must not be None")
 
     if isinstance(value, list):
-        normalized_list = [unicode(x) for x in value]
+        normalized_list = [str(x) for x in value]
         if any(delimiter in x for x in normalized_list):
             raise ValueError("list items cannot contain delimiter")
         normalized = delimiter.join(normalized_list)
     else:
-        normalized = unicode(value)
+        normalized = str(value)
         if delimiter in normalized:
             raise ValueError("value cannot contain delimiter")
 

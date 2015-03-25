@@ -16,7 +16,7 @@ class TestToolInformation(EntityTestCase, unittest.TestCase):
         'id': "example:Tool-A1",
         'idref': "example:Tool-A1-ref",
         'name': "AwesomeTool(tm)",
-        'type': [u'NIDS', u'HIPS'],
+        'type': ['NIDS', 'HIPS'],
         'description': {'structuring_format': 'HTML',
                         'value': '<p>An awesome tool!</p>'},
 

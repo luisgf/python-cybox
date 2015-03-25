@@ -12,7 +12,7 @@ class TestWinCriticalSection(ObjectTestCase, unittest.TestCase):
     klass = WinCriticalSection
 
     _full_dict = {
-        'address': u"deadbeef",
+        'address': "deadbeef",
         'spin_count': 12345,
         'xsi:type': object_type
     }

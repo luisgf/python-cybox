@@ -88,17 +88,17 @@ class TestContact(EntityTestCase, unittest.TestCase):
 
     _full_dict = {
         'contact_type': "ADMIN",
-        'contact_id': u"abc123",
-        'name': u"John Smith",
+        'contact_id': "abc123",
+        'name': "John Smith",
         'email_address': {
-            'address_value': u"john@smith.com",
+            'address_value': "john@smith.com",
             'category': Address.CAT_EMAIL,
             'xsi:type': "AddressObjectType",
         },
-        'phone_number': u"(800) 555-1212",
-        'fax_number': u"(800) 555-1200",
-        'address': u"123 Main St.\nAnytown, CA 01234",
-        'organization': u"XYZ Hosting",
+        'phone_number': "(800) 555-1212",
+        'fax_number': "(800) 555-1200",
+        'address': "123 Main St.\nAnytown, CA 01234",
+        'organization': "XYZ Hosting",
     }
 
     def test_parse_email_address(self):
@@ -130,16 +130,16 @@ class TestRegistrant(EntityTestCase, unittest.TestCase):
         contact_obj = WhoisContactType(
             contact_type="ADMIN",
             Contact_ID=StringObjectPropertyType(valueOf_="abc123"),
-            Fax_Number=StringObjectPropertyType(valueOf_=u"(800) 555-1200"),
-            Organization=StringObjectPropertyType(valueOf_=u"XYZ Hosting"),
+            Fax_Number=StringObjectPropertyType(valueOf_="(800) 555-1200"),
+            Organization=StringObjectPropertyType(valueOf_="XYZ Hosting"),
         )
         contact = WhoisContact.from_obj(contact_obj)
 
         reg_obj = WhoisRegistrantInfoType(
             contact_type="ADMIN",
             Contact_ID=StringObjectPropertyType(valueOf_="abc123"),
-            Fax_Number=StringObjectPropertyType(valueOf_=u"(800) 555-1200"),
-            Organization=StringObjectPropertyType(valueOf_=u"XYZ Hosting"),
+            Fax_Number=StringObjectPropertyType(valueOf_="(800) 555-1200"),
+            Organization=StringObjectPropertyType(valueOf_="XYZ Hosting"),
         )
         registrant = WhoisRegistrant.from_obj(reg_obj)
 

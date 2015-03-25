@@ -32,7 +32,7 @@ class TestURI(ObjectTestCase, unittest.TestCase):
         self.assertEqual(t, uri2.type_)
 
     def test_unicode(self):
-        u = u"www.\u0395\u03a7\u0391\u039c\u03a1LE.com"
+        u = "www.\u0395\u03a7\u0391\u039c\u03a1LE.com"
         uri = URI(u, URI.TYPE_DOMAIN)
         uri2 = cybox.test.round_trip(uri)
         self.assertEqual(uri.to_dict(), uri2.to_dict())

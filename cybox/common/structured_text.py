@@ -79,4 +79,4 @@ class StructuredText(cybox.Entity):
         return self.__unicode__().encode("utf-8")
     
     def __unicode__(self):
-        return unicode(self.value)
+        return str(self.value)

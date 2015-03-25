@@ -4,10 +4,10 @@
 import sys
 
 from cybox.bindings import *
-import cybox_common
+from . import cybox_common
 
-import address_object
-import network_route_entry_object
+from . import address_object
+from . import network_route_entry_object
 
 
 class RoutesType(GeneratedsSuper):
@@ -294,7 +294,7 @@ Usage: python <Parser>.py [ -s ] <in_xml_file>
 """
 
 def usage():
-    print USAGE_TEXT
+    print(USAGE_TEXT)
     sys.exit(1)
 
 def get_root_tag(node):
@@ -340,7 +340,7 @@ def parseEtree(inFileName):
     return rootObj, rootElement
 
 def parseString(inString):
-    from StringIO import StringIO
+    from io import StringIO
     doc = parsexml_(StringIO(inString))
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)

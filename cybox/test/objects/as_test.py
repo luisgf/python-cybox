@@ -13,9 +13,9 @@ class TestAccount(ObjectTestCase, unittest.TestCase):
 
     _full_dict = {
         'number': 22222,
-        'name': u"OMAHASTEAKS",
-        'handle': u"AS22222",
-        'regional_internet_registry': u"ARIN",
+        'name': "OMAHASTEAKS",
+        'handle': "AS22222",
+        'regional_internet_registry': "ARIN",
         'xsi:type': object_type,
     }
 

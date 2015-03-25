@@ -18,7 +18,7 @@ NUMERIC_TYPES = (Integer, PositiveInteger, UnsignedInteger, NonNegativeInteger,
 class TestBaseProperty(unittest.TestCase):
 
     def test_create_all(self):
-        for PropertyClass in BINDING_CLASS_MAPPING.values():
+        for PropertyClass in list(BINDING_CLASS_MAPPING.values()):
             prop = PropertyClass()
 
     def test_plain(self):
@@ -36,7 +36,7 @@ class TestBaseProperty(unittest.TestCase):
         self.assertEqual(s, s2)
 
     def test_list_of_strings_with_comma(self):
-        s = String([u"string,1", u"string,1", u"string,3"])
+        s = String(["string,1", "string,1", "string,3"])
         s2 = cybox.test.round_trip(s)
         self.assertEqual(s, s2)
 
@@ -52,9 +52,9 @@ class TestBaseProperty(unittest.TestCase):
         self.assertEqual(i.value, 42)
 
     def test_unicode_string(self):
-        s = u"A Unicode \ufffd string"
+        s = "A Unicode \ufffd string"
         string = String(s)
-        self.assertEqual(s, unicode(string))
+        self.assertEqual(s, str(string))
         self.assertEqual(s.encode("utf-8"), str(string))
 
     def test_cannot_create_abstract_obj(self):

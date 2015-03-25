@@ -12,14 +12,14 @@ class TestWinCriticalSection(ObjectTestCase, unittest.TestCase):
     klass = WinComputerAccount
 
     _full_dict = {
-        'security_id': u"An ID",
-        'type': u"A type",
+        'security_id': "An ID",
+        'type': "A type",
         'fully_qualified_name': {
-            'netbeui_name': u"A NetBEUI name",
-            'full_name': u"A full name"
+            'netbeui_name': "A NetBEUI name",
+            'full_name': "A full name"
         },
         'kerberos': {
-            'ticket': 9000L,
+            'ticket': 9000,
             'delegation': {
                 'bitmask': "dead1234",
                 'service': {

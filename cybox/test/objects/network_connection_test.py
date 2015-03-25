@@ -17,37 +17,37 @@ class TestNetworkConnection(ObjectTestCase, unittest.TestCase):
     _full_dict = {
         'tls_used': False,
         'creation_time': "2013-07-30T02:02:02+04:00",
-        'layer3_protocol': u"IPV4",
-        'layer4_protocol': u"TCP",
-        'layer7_protocol': u"HTTP",
+        'layer3_protocol': "IPV4",
+        'layer4_protocol': "TCP",
+        'layer7_protocol': "HTTP",
         'source_socket_address': {
             'ip_address': {
                 'category': Address.CAT_IPV4,
-                'address_value': u"192.168.1.1",
+                'address_value': "192.168.1.1",
                 'xsi:type': "AddressObjectType",
             },
             'port': {
                 'port_value': 4567,
-                'layer4_protocol': u"TCP",
+                'layer4_protocol': "TCP",
                 'xsi:type': "PortObjectType",
             },
             'xsi:type': "SocketAddressObjectType",
         },
-        'source_tcp_state': u"UNKNOWN",
+        'source_tcp_state': "UNKNOWN",
         'destination_socket_address': {
             'ip_address': {
                 'category': Address.CAT_IPV4,
-                'address_value': u"192.168.1.50",
+                'address_value': "192.168.1.50",
                 'xsi:type': "AddressObjectType",
             },
             'port': {
                 'port_value': 80,
-                'layer4_protocol': u"TCP",
+                'layer4_protocol': "TCP",
                 'xsi:type': "PortObjectType",
             },
             'xsi:type': "SocketAddressObjectType",
         },
-        'destination_tcp_state': u"UNKNOWN",
+        'destination_tcp_state': "UNKNOWN",
         'layer7_connections': {
             'http_session': {
                 'object_reference': "example:ABC-1",
@@ -79,11 +79,11 @@ class TestLayer7Connections(EntityTestCase, unittest.TestCase):
             {
                 'question': {
                     'qname': {
-                        'value': u"www.example.com",
+                        'value': "www.example.com",
                         'xsi:type': "URIObjectType",
                     },
-                    'qtype': u"A",
-                    'qclass': u"IN",
+                    'qtype': "A",
+                    'qclass': "IN",
                 },
                 'successful': True,
                 'xsi:type': "DNSQueryObjectType",
@@ -91,10 +91,10 @@ class TestLayer7Connections(EntityTestCase, unittest.TestCase):
             {
                 'question': {
                     'qname': {
-                        'value': u"www.example2.com",
+                        'value': "www.example2.com",
                         'xsi:type': "URIObjectType",
                     },
-                    'qtype': u"CNAME",
+                    'qtype': "CNAME",
                 },
                 'successful': False,
                 'xsi:type': "DNSQueryObjectType",

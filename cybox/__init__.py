@@ -6,7 +6,7 @@ __version__ = "2.1.0.9"
 import collections
 import inspect
 import json
-from StringIO import StringIO
+from io import StringIO
 
 import cybox.bindings as bindings
 import cybox.utils.idgen
@@ -111,9 +111,9 @@ class Entity(object):
         for klass in self.__class__.__mro__:
             if klass is Entity:
                 break
-            vars.update(klass.__dict__.iteritems())
+            vars.update(iter(klass.__dict__.items()))
 
-        for name, field in vars.iteritems():
+        for name, field in vars.items():
             if isinstance(field, TypedField):
                 val = getattr(self, field.attr_name)
 
@@ -150,9 +150,9 @@ class Entity(object):
         for klass in self.__class__.__mro__:
             if klass is Entity:
                 break
-            vars.update(klass.__dict__.iteritems())
+            vars.update(iter(klass.__dict__.items()))
 
-        for name, field in vars.iteritems():
+        for name, field in vars.items():
             if isinstance(field, TypedField):
                 val = getattr(self, field.attr_name)
 
@@ -275,7 +275,7 @@ class Entity(object):
                 pretty_print=pretty
             )
 
-        s = unicode(sio.getvalue()).strip()
+        s = str(sio.getvalue()).strip()
 
         if encoding:
             return s.encode(encoding)
@@ -302,7 +302,7 @@ class Entity(object):
         namespaces = self._get_namespaces()
 
         if additional_ns_dict:
-            for ns, prefix in additional_ns_dict.iteritems():
+            for ns, prefix in additional_ns_dict.items():
                 namespaces.update([Namespace(ns, prefix)])
 
         # TODO: For now, always add the ID namespace. Later we can figure out
@@ -344,7 +344,7 @@ class Entity(object):
     def _get_children(self):
         #TODO: eventually everything should be in _fields, not the top level
         # of vars()
-        for k, v in vars(self).items() + self._fields.items():
+        for k, v in list(vars(self).items()) + list(self._fields.items()):
             if isinstance(v, Entity):
                 yield v
             elif isinstance(v, list):
@@ -387,7 +387,7 @@ class Unicode(Entity):
 
     @value.setter
     def value(self, value):
-        self._value = unicode(value)
+        self._value = str(value)
 
     def to_obj(self, return_obj=None, ns_info=None):
         self._collect_ns_info(ns_info)
@@ -559,7 +559,7 @@ class ObjectReference(Entity):
 class ReferenceList(EntityList):
 
     def _fix_value(self, value):
-        if isinstance(value, basestring):
+        if isinstance(value, str):
             return self._contained_type(value)
 
 

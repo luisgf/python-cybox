@@ -14,9 +14,9 @@ class TestWinWaitableTimer(ObjectTestCase, unittest.TestCase):
     klass = WinWaitableTimer
 
     _full_dict = {
-        'security_attributes': u"timer attributes",
-        'name': u"timer name",
-        'type': u"timer type",
+        'security_attributes': "timer attributes",
+        'name': "timer name",
+        'type': "timer type",
         'xsi:type': object_type,
     }
 

@@ -13,7 +13,7 @@ from cybox.objects.code_object import Code, CodeSegmentXOR
 from cybox.objects.whois_object import WhoisEntry
 from cybox.test import round_trip
 
-UNICODE_STR = u"❤ ♎ ☀ ★ ☂ ♞ ☯ ☭ ☢ €☎⚑ ❄♫✂"
+UNICODE_STR = "❤ ♎ ☀ ★ ☂ ♞ ☯ ☭ ☢ €☎⚑ ❄♫✂"
 
 
 class EncodingTests(unittest.TestCase):
@@ -73,22 +73,22 @@ class EncodingTests(unittest.TestCase):
     def test_quote_attrib_int(self):
         i = 65536
         s = bindings.quote_attrib(i)
-        self.assertEqual(u'"65536"', s)
+        self.assertEqual('"65536"', s)
 
     def test_quote_attrib_bool(self):
         b = True
         s = bindings.quote_attrib(b)
-        self.assertEqual(u'"True"', s)
+        self.assertEqual('"True"', s)
 
     def test_quote_xml_int(self):
         i = 65536
         s = bindings.quote_xml(i)
-        self.assertEqual(unicode(i), s)
+        self.assertEqual(str(i), s)
 
     def test_quote_xml_bool(self):
         b = True
         s = bindings.quote_xml(b)
-        self.assertEqual(unicode(b), s)
+        self.assertEqual(str(b), s)
 
     def test_quote_xml_encoded(self):
         encoding = bindings.ExternalEncoding
@@ -105,32 +105,32 @@ class EncodingTests(unittest.TestCase):
     def test_quote_xml_zero(self):
         i = 0
         s = bindings.quote_xml(i)
-        self.assertEqual(unicode(i), s)
+        self.assertEqual(str(i), s)
 
     def test_quote_attrib_zero(self):
         i = 0
         s = bindings.quote_attrib(i)
-        self.assertEqual(u'"0"', s)
+        self.assertEqual('"0"', s)
 
     def test_quote_xml_none(self):
         i = None
         s = bindings.quote_xml(i)
-        self.assertEqual(u'', s)
+        self.assertEqual('', s)
 
     def test_quote_attrib_none(self):
         i = None
         s = bindings.quote_attrib(i)
-        self.assertEqual(u'""', s)
+        self.assertEqual('""', s)
 
     def test_quote_attrib_empty(self):
         i = ''
         s = bindings.quote_attrib(i)
-        self.assertEqual(u'""', s)
+        self.assertEqual('""', s)
 
     def test_quote_xml_empty(self):
         i = ''
         s = bindings.quote_xml(i)
-        self.assertEqual(u'', s)
+        self.assertEqual('', s)
 
     def test_to_xml_utf16_encoded(self):
         encoding = 'utf-16'
@@ -149,7 +149,7 @@ class EncodingTests(unittest.TestCase):
         o = Observable()
         o.title = UNICODE_STR
         xml = o.to_xml(encoding=None)
-        self.assertTrue(isinstance(xml, unicode))
+        self.assertTrue(isinstance(xml, str))
         self.assertTrue(UNICODE_STR in xml)
 
 if __name__ == "__main__":

@@ -14,8 +14,8 @@ class TestWinNetworkRouteEntry(ObjectTestCase, unittest.TestCase):
     klass = WinNetworkRouteEntry
 
     _full_dict = {
-        'nl_route_protocol': u"A protocol",
-        'nl_route_origin': u"An origin",
+        'nl_route_protocol': "A protocol",
+        'nl_route_origin': "An origin",
         'xsi:type': object_type,
     }
 

@@ -17,26 +17,26 @@ class TestARPCache(ObjectTestCase, unittest.TestCase):
         'arp_cache_entry': [
             {
                 'ip_address': {
-                    'address_value': u"100.200.100.1",
+                    'address_value': "100.200.100.1",
                     'xsi:type': 'AddressObjectType'
                 }, 
-                'physical_address': u"100.200.100.1",
-                'type': u"Test",
+                'physical_address': "100.200.100.1",
+                'type': "Test",
                 'network_interface': {
-                    'adapter': u'eth0',
-                    'description': u'a test'
+                    'adapter': 'eth0',
+                    'description': 'a test'
                 }
             },
             {
                 'ip_address': {
-                    'address_value': u"100.200.100.2",
+                    'address_value': "100.200.100.2",
                     'xsi:type': 'AddressObjectType'
                 }, 
-                'physical_address': u"100.200.100.2",
-                'type': u"Test 2",
+                'physical_address': "100.200.100.2",
+                'type': "Test 2",
                 'network_interface': {
-                    'adapter': u'eth2',
-                    'description': u'a test 2'
+                    'adapter': 'eth2',
+                    'description': 'a test 2'
                 }
             }
         ],
